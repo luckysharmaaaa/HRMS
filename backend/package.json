@@ -1,3 +1,4 @@
+
 {
   "name": "base-api",
   "version": "1.0.0",
@@ -5,7 +6,7 @@
   "main": "dist/server.js",
   "scripts": {
     "dev": "nodemon src/server.ts",
-    "clean": "rimraf dist",
+    "clean": "rm -rf dist",
     "build": "npm run clean && tsc",
     "start": "node dist/server.js",
     "typecheck": "tsc --noEmit",
@@ -39,7 +40,6 @@
     "mysql2": "^3.9.1",
     "nodemailer": "^6.9.7",
     "nodemon": "^3.1.14",
-    "rimraf": "^5.0.5",
     "slugify": "^1.6.9",
     "winston": "^3.11.0"
   },
