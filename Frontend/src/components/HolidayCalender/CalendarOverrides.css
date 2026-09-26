@@ -1,0 +1,141 @@
+/* ══════════════════════════════════════════
+   HRMS Standard Calendar Styles
+   ══════════════════════════════════════════ */
+
+.calendar-wrapper .fc {
+  font-family: inherit;
+  --fc-border-color: #e5e7eb;
+  --fc-today-bg-color: transparent;
+  --fc-page-bg-color: transparent;
+  --fc-small-font-size: 1rem;
+}
+
+/* ── Month / Week Title ── */
+.calendar-wrapper .fc .fc-toolbar-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0F265C;
+  letter-spacing: -0.02em;
+}
+
+/* ── Toolbar Nav Buttons ── */
+.calendar-wrapper .fc .fc-button {
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  padding: 8px 18px;
+  box-shadow: none;
+  transition: all 0.15s;
+}
+
+.calendar-wrapper .fc .fc-button:hover,
+.calendar-wrapper .fc .fc-button-primary:not(:disabled):hover {
+  background-color: #e5e7eb;
+  border-color: #d1d5db;
+  color: #111827;
+}
+
+.calendar-wrapper .fc .fc-button-primary:not(:disabled):active,
+.calendar-wrapper .fc .fc-button-primary:not(:disabled).fc-button-active {
+  background-color: #0F265C;
+  border-color: #0F265C;
+  color: #ffffff;
+  box-shadow: none;
+}
+
+/* ── Grid borders ── */
+.calendar-wrapper .fc-theme-standard td,
+.calendar-wrapper .fc-theme-standard th,
+.calendar-wrapper .fc-theme-standard .fc-scrollgrid {
+  border-color: #e5e7eb !important;
+}
+
+/* ── Day-of-week Header (Mon, Tue…) ── */
+.calendar-wrapper .fc th {
+  padding: 16px 0;
+  background-color: #f9fafb;
+  color: #6b7280;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+/* ── Day Cell ── */
+.calendar-wrapper .fc-daygrid-day {
+  height: auto;
+}
+
+.calendar-wrapper .fc-daygrid-day:hover {
+  background-color: #f9fafb;
+}
+
+/* Prevent internal scrollbar without breaking layout */
+.calendar-wrapper .fc-scroller {
+  overflow-y: hidden !important;
+}
+
+.calendar-wrapper .fc-scroller-harness {
+  overflow: hidden !important;
+}
+
+/* ── Day Number ── */
+.calendar-wrapper .fc-daygrid-day-number {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+  padding: 12px 14px !important;
+  line-height: 1;
+}
+
+/* ── Other-month Day Number ── */
+.calendar-wrapper .fc-day-other .fc-daygrid-day-number {
+  color: #d1d5db;
+  font-weight: 400;
+}
+
+/* ── TODAY ── */
+.calendar-wrapper .fc-day-today {
+  background-color: #fff7ed !important;
+}
+
+.calendar-wrapper .fc-day-today .fc-daygrid-day-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 8px 10px;
+  padding: 0 !important;
+  background-color: #dc2626;
+  color: #ffffff !important;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+
+/* ── Events ── */
+.calendar-wrapper .fc-event {
+  border-radius: 6px !important;
+  border: none !important;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  cursor: pointer;
+  margin: 1px 4px !important;
+}
+
+.calendar-wrapper .fc-event:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+  transition: all 0.15s;
+}
+
+.calendar-wrapper .fc-daygrid-more-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+}

@@ -1,0 +1,17 @@
+export const DEPARTMENT_DATA = [
+  { id: 1, name: "Finance", employees: 20, status: "Active", createdDate: "Jan 5 2026" },
+  { id: 2, name: "HR", employees: 15, status: "Active", createdDate: "Jan 12 2026" },
+  { id: 3, name: "Engineering", employees: 45, status: "Active", createdDate: "Feb 3 2026" },
+  { id: 4, name: "Marketing", employees: 18, status: "Active", createdDate: "Feb 14 2026" },
+  { id: 5, name: "Sales", employees: 30, status: "Active", createdDate: "Mar 1 2026" },
+  { id: 6, name: "Design", employees: 12, status: "Inactive", createdDate: "Mar 10 2026" },
+  { id: 7, name: "Operations", employees: 22, status: "Active", createdDate: "Mar 20 2026" },
+  { id: 8, name: "Legal", employees: 8, status: "Active", createdDate: "Apr 2 2026" },
+  { id: 9, name: "Product", employees: 16, status: "Active", createdDate: "Apr 15 2026" },
+  { id: 10, name: "Customer Support", employees: 25, status: "Inactive", createdDate: "Apr 28 2026" },
+  { id: 11, name: "IT Infrastructure", employees: 11, status: "Active", createdDate: "May 5 2026" },
+  { id: 12, name: "Quality Assurance", employees: 14, status: "Active", createdDate: "May 18 2026" },
+  { id: 13, name: "Research & Development", employees: 19, status: "Active", createdDate: "Jun 2 2026" },
+  { id: 14, name: "Procurement", employees: 9, status: "Inactive", createdDate: "Jun 10 2026" },
+  { id: 15, name: "Administration", employees: 7, status: "Active", createdDate: "Jun 20 2026" },
+];

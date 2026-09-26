@@ -1,0 +1,50 @@
+﻿
+> base-api@1.0.0 typecheck
+> tsc --noEmit
+
+src/middleware/error.middleware.ts(24,29): error TS2339: Property 'isOperational' does not exist on type 'ApiError'.
+src/routes/rbac.routes.ts(12,22): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthRequest'.
+            Types of property 'user' are incompatible.
+              Type 'AuthenticatedUser | undefined' is not assignable to type 'AuthenticatedUser'.
+                Type 'undefined' is not assignable to type 'AuthenticatedUser'.
+src/routes/rbac.routes.ts(13,23): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthRequest'.
+            Types of property 'user' are incompatible.
+              Type 'AuthenticatedUser | undefined' is not assignable to type 'AuthenticatedUser'.
+                Type 'undefined' is not assignable to type 'AuthenticatedUser'.
+src/routes/rbac.routes.ts(16,42): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthRequest'.
+            Types of property 'user' are incompatible.
+              Type 'AuthenticatedUser | undefined' is not assignable to type 'AuthenticatedUser'.
+                Type 'undefined' is not assignable to type 'AuthenticatedUser'.
+src/routes/rbac.routes.ts(17,29): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthRequest'.
+            Types of property 'user' are incompatible.
+              Type 'AuthenticatedUser | undefined' is not assignable to type 'AuthenticatedUser'.
+                Type 'undefined' is not assignable to type 'AuthenticatedUser'.
+src/routes/rbac.routes.ts(20,35): error TS2769: No overload matches this call.
+  The last overload gave the following error.
+    Argument of type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to parameter of type 'RequestHandlerParams<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+      Type '(req: AuthRequest, _res: Response, next: NextFunction) => Promise<void>' is not assignable to type 'RequestHandler<ParamsDictionary, any, any, ParsedQs, Record<string, any>>'.
+        Types of parameters 'req' and 'req' are incompatible.
+          Type 'Request<ParamsDictionary, any, any, ParsedQs, Record<string, any>>' is not assignable to type 'AuthRequest'.
+            Types of property 'user' are incompatible.
+              Type 'AuthenticatedUser | undefined' is not assignable to type 'AuthenticatedUser'.
+                Type 'undefined' is not assignable to type 'AuthenticatedUser'.

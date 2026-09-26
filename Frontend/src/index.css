@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* ── Primary (Brand Blue) ── */
+  --color-primary-50: #EEF1F8;
+  --color-primary-100: #D6DCEE;
+  --color-primary-200: #AEB9DD;
+  --color-primary-300: #8696CC;
+  --color-primary-400: #4A5A94;
+  --color-primary-600: #0F265C;
+  --color-primary-700: #041D5F;
+  --color-primary-800: #031646;
+  --color-primary-900: #020F33;
+
+  /* ── Accent (Orange) — unchanged, matches Tailwind's own scale ── */
+  --color-accent-400: #FB923C;
+  --color-accent-500: #F97316;
+  --color-accent-600: #EA580C;
+
+  /* ── Semantic ── */
+  --color-success-50: #F0FDF4;
+  --color-success-500: #22C55E;
+  --color-success-600: #16A34A;
+
+  --color-warning-50: #FFFBEB;
+  --color-warning-500: #F59E0B;
+  --color-warning-600: #D97706;
+
+  --color-danger-50: #FEF2F2;
+  --color-danger-500: #EF4444;
+  --color-danger-600: #DC2626;
+
+  --color-info-50: #EFF6FF;
+  --color-info-500: #3B82F6;
+  --color-info-600: #2563EB;
+
+  /* ── Neutrals ── */
+  --color-surface: #FFFFFF;
+  --color-background: #F8FAFC;
+  --color-border-subtle: #E5E7EB;
+  --color-border-strong: #D1D5DB;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-disabled: #9CA3AF;
+
+  /* Back-compat aliases so existing hardcoded classes still map cleanly */
+  --color-brand-blue: #041D5F;
+  --color-brand-blue-light: #0F265C;
+  --color-brand-orange: #F97316;
+  --color-brand-orange-dark: #EA580C;
+
+  /* ── Elevation ──
+     Usage convention: cards/table rows = shadow-sm, dropdowns/popovers/
+     modals = shadow-md, floating panels (toasts, tooltips) = shadow-lg.
+     Keep this convention everywhere — mixed shadow weights across similar
+     components is the #1 thing that makes a dashboard look unpolished. */
+  --shadow-sm: 0 1px 2px 0 rgb(4 29 95 / 0.04), 0 1px 3px 0 rgb(4 29 95 / 0.06);
+  --shadow-md: 0 4px 6px -1px rgb(4 29 95 / 0.08), 0 2px 4px -2px rgb(4 29 95 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(4 29 95 / 0.10), 0 4px 6px -4px rgb(4 29 95 / 0.05);
+
+  /* ── Radius ──
+     One scale, applied everywhere: sm = inputs/badges/small buttons,
+     md = cards/buttons/dropdowns (also mirrored in MUI's theme.shape),
+     lg = modals/large panels/hero sections. */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* ── Brand gradients — for sidebar, hero banners, primary CTAs.
+     Use sparingly: one gradient surface per screen keeps it looking
+     intentional rather than decorative. ── */
+  --gradient-brand: linear-gradient(135deg, var(--color-primary-700) 0%, var(--color-primary-400) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--color-accent-500) 0%, var(--color-accent-600) 100%);
+  --gradient-sidebar: linear-gradient(180deg, var(--color-primary-800) 0%, var(--color-primary-700) 100%);
+
+  /* ── Motion ── one easing curve, two durations, used everywhere:
+     duration-fast = hover/focus states, duration-base = layout shifts
+     (sidebar collapse, drawer open, page transitions). */
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+}
+
+* {
+  transition-timing-function: var(--ease-standard);
+}
+
+:root {
+  color: var(--color-text-primary);
+  background-color: var(--color-background);
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+.fav-icon {
+  background-color: white;
+}
+
+/* ── Utility classes for the gradients above, since Tailwind v4 doesn't
+   auto-generate bg-gradient utilities from --gradient-* theme vars. ── */
+.bg-gradient-brand {
+  background-image: var(--gradient-brand);
+}
+
+.bg-gradient-accent {
+  background-image: var(--gradient-accent);
+}
+
+.bg-gradient-sidebar {
+  background-image: var(--gradient-sidebar);
+}
+
+/* ── Custom ease utility (Tailwind's `ease-standard` isn't a built-in
+   token name, so define it explicitly for use as a class). ── */
+.ease-standard {
+  transition-timing-function: var(--ease-standard);
+}
