@@ -96,24 +96,28 @@ class App {
 
   public async start(): Promise<void> {
     try {
-      await testConnection();
+        await testConnection();
 
-      const port = Number(process.env.PORT) || config.server.port;
+        const port = Number(process.env.PORT) || config.server.port;
 
-      this.server = this.app.listen(port, "0.0.0.0", () => {
-        logger.info(`Server started on port ${port}`);
-        logger.info(`Environment: ${config.server.env}`);
-        logger.info(`API: /api/${config.server.apiVersion}`);
-        logger.info("Database connected");
-      });
+        this.server = this.app.listen(port, '0.0.0.0', () => {
+            logger.info(`Server started on port ${port}`);
+            logger.info(`Environment: ${config.server.env}`);
+            logger.info(`API: /api/${config.server.apiVersion}`);
+            logger.info('Database connected');
+        });
     } catch (error) {
-      logger.error(
-        "Failed to start server:",
-        (error as Error).message,
-      );
-      process.exit(1);
+        console.error('STARTUP ERROR:', error);
+
+        logger.error(
+            `Failed to start server: ${
+                error instanceof Error ? error.message : String(error)
+            }`
+        );
+
+        process.exit(1);
     }
-  }
+}
 
   public async stop(): Promise<void> {
     if (this.server) {

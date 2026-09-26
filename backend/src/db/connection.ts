@@ -5,30 +5,42 @@ import logger from '../utils/logger';
 const db = config.database;
 
 const pool = mysql.createPool({
-    host:               db.host,
-    port:               db.port,
-    database:           db.database,
-    user:               db.user,
-    password:           db.password,
-    connectionLimit:    db.poolMax,
+    host: db.host,
+    port: db.port,
+    database: db.database,
+    user: db.user,
+    password: db.password,
+    connectionLimit: db.poolMax,
     waitForConnections: true,
-    queueLimit:         0,
-    // Allow multiple SQL statements per query (needed for migration files)
+    queueLimit: 0,
+
+    // Allow multiple SQL statements per query
     multipleStatements: true,
-    // Return JS Date objects for DATETIME columns
-    dateStrings:        true,
-    // Parse JSON columns automatically
+
+    // Return DATETIME values as strings
+    dateStrings: true,
+
+    // Parse JSON columns and TINYINT(1) values
     typeCast: (field, next) => {
         if (field.type === 'JSON') {
             const val = field.string();
-            if (val === null) return null;
-            try { return JSON.parse(val); } catch { return val; }
+
+            if (val === null) {
+                return null;
+            }
+
+            try {
+                return JSON.parse(val);
+            } catch {
+                return val;
+            }
         }
+
         if (field.type === 'TINY' && field.length === 1) {
-            // Map TINYINT(1) → boolean
             const val = field.string();
             return val === null ? null : val !== '0';
         }
+
         return next();
     },
 });
@@ -38,13 +50,23 @@ export const testConnection = async (): Promise<boolean> => {
         const [rows] = await pool.query<mysql.RowDataPacket[]>(
             'SELECT NOW() AS now, DATABASE() AS `database`'
         );
+
         const row = rows[0];
+
         logger.info('✓ Database connected [MySQL]');
-        logger.info(`  Database: ${row.database}`);
-        logger.info(`  Server time: ${row.now}`);
+        logger.info(`Database: ${row.database}`);
+        logger.info(`Server time: ${row.now}`);
+
         return true;
     } catch (error) {
-logger.error('Failed to start server:', (error as Error).message);
+        console.error('DATABASE CONNECTION ERROR:', error);
+
+        logger.error(
+            `Database connection failed: ${
+                error instanceof Error ? error.message : String(error)
+            }`
+        );
+
         throw error;
     }
 };
@@ -54,7 +76,13 @@ export const closeConnection = async (): Promise<void> => {
         await pool.end();
         logger.info('Database connection pool closed');
     } catch (error) {
-        logger.error('Error closing database connection:', (error as Error).message);
+        console.error('DATABASE CLOSE ERROR:', error);
+
+        logger.error(
+            `Error closing database connection: ${
+                error instanceof Error ? error.message : String(error)
+            }`
+        );
     }
 };
 
