@@ -44,7 +44,7 @@ export const testConnection = async (): Promise<boolean> => {
         logger.info(`  Server time: ${row.now}`);
         return true;
     } catch (error) {
-        logger.error('✗ Database connection failed:', (error as Error).message);
+logger.error('Failed to start server:', (error as Error).message);
         throw error;
     }
 };
